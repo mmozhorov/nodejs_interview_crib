@@ -44,7 +44,6 @@ console.log("END");
 //Timeout 2
 
 /*
-
 Phases of NODE.JS event loop:
 1) process.nextTick - called first + after each phase of tick between each one, as example ( timers and callbacks , ... )
 2) Promises - called secondary + after each phase of tick between each one, as example ( timers and callbacks , ... )
@@ -52,6 +51,5 @@ Phases of NODE.JS event loop:
 4) I/O callbacks
 5) Incoming I/O requests
 6) Check phase ( setImmidiate )
-6) Close callbacks
-
-*/ 
+6) Close callbacks - socket.on('close', ...)
+*/
