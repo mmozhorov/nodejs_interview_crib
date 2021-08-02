@@ -6,7 +6,7 @@
 // };
   
 // user.getName.userName = 'Nick';
-// user.getName(); // Alex
+// user.getName(); // undefined
  
 // const { getName } = user;
 // getName(); // undefined
