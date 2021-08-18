@@ -13,6 +13,13 @@
 
 ///
 
+//const a = [1,5,87,34,23,6];
+
+//console.log( Math.max.call(null, ...a) );
+
+//console.log( Math.max.apply(null, a) );
+
+
 // Promise.reject('a')
 //     .catch(p => p + 'b') 
 //     .catch(p => p + 'с')// X
@@ -125,7 +132,6 @@ export default function App() {
   const handleSubmitButton = () => alert(inputValue);
   const inputOneRef = React.createRef();
   
- 
   return (
     <form className="App">
       <input ref={ inputOneRef } onChange/>
