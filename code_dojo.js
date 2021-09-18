@@ -1,24 +1,28 @@
-function getMostProfitFromStockQuotes( quotes = [] ) {
-    let sum = 0;
-    let countOfQuotes = 0;
-    
-    quotes.forEach( ( quote, i ) => {
-        const biggestQuoteAfterCurrent = quotes.find( ( item, j ) => ( j > i ) && item > quote );
+// var str = `2.Start UP et Cal pH \ Calibration sonde pH \ CALIBRATION SONDE`
+// var a = String.raw `${str}`
 
-        if( biggestQuoteAfterCurrent ) {
-            sum -= quote;
-            countOfQuotes++;
-        }
-        else {
-            sum += quote * countOfQuotes;
-            countOfQuotes = 0;
-        }
-    });
+// console.log( a );
 
-    return sum;
+
+function hex2a(hexx) {
+    var hex = hexx.toString();//force conversion
+    var str = '';
+    for (var i = 0; i < hex.length; i += 2)
+        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+      
+    return str;
 }
+ 
+function convertASCII( symbols ) {
+    console.log("Symbols: ", symbols);
+    
+    const str = String.fromCharCode(symbols);
+    
+    console.log("Symbols2: ", str);
 
-getMostProfitFromStockQuotes( [ 1, 2, 3, 4, 5, 6 ] )       //=> 15  (buy at 1,2,3,4,5 and then sell all at 6)
-getMostProfitFromStockQuotes( [ 6, 5, 4, 3, 2, 1 ] )      // => 0   (nothing to buy for profit)
-getMostProfitFromStockQuotes( [ 1, 6, 5, 10, 8, 7 ] )     // => 18  (buy at 1,6,5 and sell all at 10)
-getMostProfitFromStockQuotes( [ 1, 2, 10, 3, 2, 7, 3, 2 ] )  // => 26  (buy at 1,2 and sell them at 10. Then buy at 3,2 and sell them at 7)
+    return str;
+}
+ 
+const str = hex2a('2.Start UP et Cal pH \ Calibration sonde pH \ CALIBRATION SONDE'); // returns '2460'
+
+const str2 = convertASCII( str );
